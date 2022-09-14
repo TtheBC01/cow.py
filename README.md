@@ -18,4 +18,4 @@ mined transactions which are currently negligible in comparison to the block rew
 pays ~`$0.00004037` per Watt-hour to secure the network. 
 
 If a cow produces ~`80` to `124` MJ of usable (i.e. accounting for generator efficiency) energy per day in the form of RNG, and said cow is paid fair market rate from the Bitcoin network for its RNG-based electric output, the cow should earn about `$26` to
-`$42` per month. 
+`$42` per month. See [cow.py](/cow.py) for calculations. 
