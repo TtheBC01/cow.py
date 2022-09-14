@@ -17,5 +17,5 @@ The current block reward in the Bitcoin network is [`6.25` BTC per block](https:
 mined transactions which are currently negligible in comparison to the block reward. This is equivalent to saying the Bitcoin network
 pays ~`$0.00004037` per Watt-hour to secure the network. 
 
-If a cow produces ~`80` to `160` MJ of usable (i.e. accounting for generator efficiency) energy per month in the form of RNG, this is the equivalent to `30` to `60` Watts of electricity per cow. Thus, if the cow is paid fair market rate from the Bitcoin network for its RNG-based electric output, said cow should earn about `$26` to
+If a cow produces ~`80` to `124` MJ of usable (i.e. accounting for generator efficiency) energy per day in the form of RNG, and said cow is paid fair market rate from the Bitcoin network for its RNG-based electric output, the cow should earn about `$26` to
 `$42` per month. 
