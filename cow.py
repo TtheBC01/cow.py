@@ -4,8 +4,8 @@ joulesperkgofmethan = 50000000 # J/kg
 methanegeneratorefficiency = 0.36 # percent
 numberofsecondsinaday = 60*60*24 # seconds
 numberofhoursinamonth = 24*30 # hours
-mathaneyieldperkg = 160 # - 216 L/kg
-kgofwasteperday = 133*0.453592 # kg/day
+mathaneyieldperkg = 216 # 160 to 216 L/kg
+kgofwasteperday = 133*0.453592 # 85 to 133 kg/day
 
 # What is the methane production rate of a cow per day
 methanvolumepercowperday = kgofwasteperday*mathaneyieldperkg # L/(cow-day)
@@ -34,4 +34,6 @@ print(f'$ per Wh: {dollarsperWh} $/Wh')
 # What can a cow expect to earn from RNG based electricity production from Bitcoin mining
 profitpercowpermonth = dollarsperWh*cowwatts*numberofhoursinamonth
 print(f'Cow earnings per month: ${profitpercowpermonth}')
+print(f'Conservative earnings per month: ${profitpercowpermonth*0.8*0.8}')
 print(f'Cow earnings per year: ${profitpercowpermonth*12}')
+print(f'Conservative earnings per year: ${profitpercowpermonth*12*0.8*0.8}')
