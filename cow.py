@@ -1,3 +1,11 @@
+from pyscript import document
+from datetime import date
+
+date_element = document.querySelector("#date")
+today = date.today()
+date_element.innerText = today.__str__();
+print(f'Date: {today}')
+
 # Constants and conversion factors
 methanedensitystp = 0.0007168 # kg/L at standard temperature and pressure
 joulesperkgofmethan = 50000000 # J/kg

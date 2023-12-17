@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>🐄 cow.py</title>
+    <link rel="shortcut icon" href="/matrixpunk.jpg" />
+    <meta name="description" content="The economics of mining bitcoin with cow manure.">
+    <meta name="keywords" content="Todd Chapman, Blockchain, bitcoin, RNG">
+    <meta name="author" content="Todd Chapman">
+    <script type="module" src="https://pyscript.net/snapshots/2023.11.1.RC3/core.js"></script>
+    <style type="text/css">
+        body {
+            background-color: black;
+            color: #00ff33;
+            align-content: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        strong.pop {
+            padding: 0.1em 0.4em;
+            font-size: 85%;
+            background-color: #2f3932;
+            border-radius: 6px;
+        }
+
+        /* visited link */
+        a[href]:visited {
+            color: #FFB000;
+        }
+
+        /* mouse over link */
+        a[href]:hover {
+            color: #FFB000;
+        }
+
+        /* unvisited link */
+        a[href] {
+            color: #00ff33;
+            text-decoration: underline;
+        }
+
+        p {
+            width: 60em;
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Economics of Mining Bitcoin with Cow Manure</h1>
+    <p>
+        The prospect of mining cryptocurrency with renewable energy is an intriguing idea,
+        particularly if the renewable energy is free of monetary cost. Consider mining Bitcoin
+        via renewable natural gas (RNG), i.e. methane from cow manure.
+    </p>
+    <p>
+        According to the <a href="https://directives.sc.egov.usda.gov/viewerFS.aspx?hid=21430">Agricultural Waste
+            Management Field Handbook</a>, a cow can produce between
+        <a href="https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=31475.wba"> <strong
+                class="pop">85</strong> and <strong class="pop">133</strong> pounds of
+            waste per day</a> based on a normalized <em>animal unit</em> of <strong class="pop">1000</strong> lbs (i.e.
+        every <strong class="pop">1000</strong> lbs of bovine live
+        stock produces between <strong class="pop">85</strong> and <strong class="pop">133</strong> lbs of manure per
+        day). Furthermore, research suggests that cow manure
+        outgases between <a
+            href="https://www.researchgate.net/publication/324976649_Biogas_Production_from_Different_Types_of_Cow_Manure#:~:text=The%20methane%20yield%20was%20found,%2Fkg%20VS"><strong
+                class="pop">160</strong>
+            and <strong class="pop">216</strong> L of methane per kg of
+            manure</a>.
+        This equates to <strong class="pop">4.4</strong> to <strong class="pop">6.9</strong> kg of methane gas
+        production per day assuming the density of methane at <a
+            href="https://www.engineeringtoolbox.com/methane-d_1420.html">standard
+            temperature and pressure is <strong class="pop">0.72</strong> g/L</a>. A kilogram of methane gas contains
+        approximately
+        <a href="https://world-nuclear.org/information-library/facts-and-figures/heat-values-of-various-fuels.aspx"><strong
+                class="pop">50</strong>MJ
+            of
+            energy</a>.
+        Modern methane-based electric generators
+        can operate at a thermodynamic efficiency in the <a
+            href="https://www.yanmar.com/global/about/technology/technical_review/2016/0727_1.html#:~:text=The%20BP%2DG%20power%20generation,23.3MJ%2FNm3">range
+            of
+            <strong class="pop">36%</strong></a>.
+        Assuming <strong class="pop">86400</strong> seconds in a day, a cow produces approximately <strong
+            class="pop">921</strong> to <strong class="pop">1441</strong> Watts (J/s) of usable
+        electric power from RNG.
+    </p>
+    <p>
+        A Bitcoin transaction is estimated to require <a
+            href="https://www.coindesk.com/business/2021/08/18/how-much-energy-does-bitcoin-use/">approximately <strong
+                class="pop">1720</strong>
+            kWh</a>
+        of energy to confirm. Based on current network activity, there are typically
+        <a href="https://www.blockchain.com/charts/n-transactions-per-block"><strong class="pop">1800</strong>
+            transactions per block</a>
+        mined in the Bitcoin network. Therefore, a block requires, on average, <strong class="pop">3096</strong> MWh
+        of energy to mine.
+    </p>
+    <p>
+        The current block reward in the Bitcoin network is <a
+            href="https://www.investopedia.com/bitcoin-halving-4843769#:~:text=As%20of%202022%2C%20Bitcoin%20miners,the%20block%20reward%20approaches%20zero."><strong
+                class="pop">6.25</strong>
+            BTC per block</a>.
+        As of <a id="date" onload='getDate'></a>, the price of BTC is around <a
+            href="https://www.coindesk.com/price/bitcoin/"><strong class="pop">$20,000</strong> USD</a>.
+        So, a new block is worth at least <strong class="pop">$125,000</strong> USD plus transaction fees associated
+        with the mined
+        transactions which are currently negligible in comparison to the block reward. This is equivalent to
+        saying the Bitcoin network pays ~<strong class="pop">$0.00004037</strong> per Watt-hour to secure the network.
+    </p>
+    <p>
+        If a cow produces ~<strong class="pop">80</strong> to <strong class="pop">124</strong> MJ of usable (i.e.
+        accounting for generator efficiency) energy
+        per day in the form of RNG, and said cow is paid fair market rate from the Bitcoin network for
+        its RNG-based electric output, the cow should earn about <strong class="pop">$25</strong> to<strong
+            class="pop">$55</strong> per month. If you assume
+        a <strong class="pop">20</strong> percent reduction in output due to various parasitic losses in RNG capture and
+        conversion
+        to electricity as well an additional <strong class="pop">20</strong> percent reduction due to unplanned outages,
+        downtime
+        due to upgrades, etc., then the cow's conservative earning potential is in the ballpark of <strong
+            class="pop">$17</strong>
+        to <strong class="pop">$25</strong> per month. See <a
+            href="https://github.com/TtheBC01/cow.py/blob/main/cow.py">cow.py</a> for calculations.
+    </p>
+    <script type="py" src="./cow.py" config="./pyscript.json"></script>
+</body>
+
+</html>
