@@ -50,6 +50,38 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        a.date {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -64,20 +96,20 @@
         According to the <a href="https://directives.sc.egov.usda.gov/viewerFS.aspx?hid=21430">Agricultural Waste
             Management Field Handbook</a>, a cow can produce between
         <a href="https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=31475.wba"> <strong
-                class="pop">85</strong> and <strong class="pop">133</strong> pounds of
+                class="pop" id="minkgwaste1"></strong> and <strong class="pop" id="maxkgwaste1"></strong> pounds of
             waste per day</a> based on a normalized <em>animal unit</em> of <strong class="pop">1000</strong> lbs (i.e.
         every <strong class="pop">1000</strong> lbs of bovine live
-        stock produces between <strong class="pop">85</strong> and <strong class="pop">133</strong> lbs of manure per
+        stock produces between <strong class="pop" id="minkgwaste2"></strong> and <strong class="pop" id="maxkgwaste2"></strong> lbs of manure per
         day). Furthermore, research suggests that cow manure
         outgases between <a
             href="https://www.researchgate.net/publication/324976649_Biogas_Production_from_Different_Types_of_Cow_Manure#:~:text=The%20methane%20yield%20was%20found,%2Fkg%20VS"><strong
-                class="pop">160</strong>
-            and <strong class="pop">216</strong> L of methane per kg of
+                class="pop" id="minmethaneyield"></strong>
+            and <strong class="pop" id="maxmethaneyield"></strong> L of methane per kg of
             manure</a>.
-        This equates to <strong class="pop">4.4</strong> to <strong class="pop">6.9</strong> kg of methane gas
+        This equates to <strong class="pop" id="minkgproduction"></strong> to <strong class="pop" id="maxkgproduction"></strong> kg of methane gas
         production per day assuming the density of methane at <a
             href="https://www.engineeringtoolbox.com/methane-d_1420.html">standard
-            temperature and pressure is <strong class="pop">0.72</strong> g/L</a>. A kilogram of methane gas contains
+            temperature and pressure is <strong class="pop" id="methanedensitystp"></strong> g/L</a>. A kilogram of methane gas contains
         approximately
         <a href="https://world-nuclear.org/information-library/facts-and-figures/heat-values-of-various-fuels.aspx"><strong
                 class="pop">50</strong>MJ
@@ -87,9 +119,9 @@
         can operate at a thermodynamic efficiency in the <a
             href="https://www.yanmar.com/global/about/technology/technical_review/2016/0727_1.html#:~:text=The%20BP%2DG%20power%20generation,23.3MJ%2FNm3">range
             of
-            <strong class="pop">36%</strong></a>.
+            <strong class="pop" id="generatorefficiency"></strong>%</a>.
         Assuming <strong class="pop">86400</strong> seconds in a day, a cow produces approximately <strong
-            class="pop">921</strong> to <strong class="pop">1441</strong> Watts (J/s) of usable
+            class="pop" id="mincowjoules"></strong> to <strong class="pop" id="maxcowjoules"></strong> Watts (J/s) of usable
         electric power from RNG.
     </p>
     <p>
@@ -108,7 +140,7 @@
             href="https://www.investopedia.com/bitcoin-halving-4843769#:~:text=As%20of%202022%2C%20Bitcoin%20miners,the%20block%20reward%20approaches%20zero."><strong
                 class="pop">6.25</strong>
             BTC per block</a>.
-        As of <a id="date" onload='getDate'></a>, the price of BTC is around <a
+        As of <a id="date"></a>, the price of BTC is around <a
             href="https://www.coindesk.com/price/bitcoin/"><strong class="pop">$20,000</strong> USD</a>.
         So, a new block is worth at least <strong class="pop">$125,000</strong> USD plus transaction fees associated
         with the mined
