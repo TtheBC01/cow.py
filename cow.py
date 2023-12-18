@@ -3,11 +3,6 @@ from datetime import date
 from pyodide.http import pyfetch
 import asyncio
 
-date_element = document.querySelector("#date")
-today = date.today()
-date_element.innerText = today.__str__();
-print(f'Date: {today}')
-
 def setElement(elemID, value):
     my_element = document.querySelector(elemID)
     my_element.innerText = value
@@ -61,10 +56,10 @@ async def getBTCPrice():
     max_profit_per_cow_per_month = dollars_per_Wh*max_cow_watts*number_of_hours_in_a_month
     min_conservative_profit_per_cow_per_month = min_profit_per_cow_per_month*(1-parasitic_loss)*(1-downtime_loss)
     max_conservative_profit_per_cow_per_month = max_profit_per_cow_per_month*(1-parasitic_loss)*(1-downtime_loss)
-    setElement("#mincowmonthlyearnings",min_profit_per_cow_per_month)
-    setElement("#maxcowmonthlyearnings",max_profit_per_cow_per_month)
-    setElement("#minconservativemonthlyearnings",min_conservative_profit_per_cow_per_month)
-    setElement("#maxconservativemonthlyearnings",max_conservative_profit_per_cow_per_month)
+    setElement("#mincowmonthlyearnings",int(min_profit_per_cow_per_month))
+    setElement("#maxcowmonthlyearnings",int(max_profit_per_cow_per_month))
+    setElement("#minconservativemonthlyearnings",int(min_conservative_profit_per_cow_per_month))
+    setElement("#maxconservativemonthlyearnings",int(max_conservative_profit_per_cow_per_month))
     print(f'Min Cow earnings per month: ${min_profit_per_cow_per_month}')
     print(f'Max Cow earnings per month: ${max_profit_per_cow_per_month}')
     print(f'Min Conservative earnings per month: ${min_conservative_profit_per_cow_per_month}')
@@ -74,6 +69,8 @@ async def getBTCPrice():
     print(f'Min Conservative earnings per year: ${min_conservative_profit_per_cow_per_month*12}')
     print(f'Max Conservative earnings per year: ${max_conservative_profit_per_cow_per_month*12}')
 
+today = date.today()
+setElement("#date",today.__str__())
 
 # Constants and conversion factors
 parasitic_loss = 0.5 # parasitic loss assumption in RNG capture and electrical conversion
@@ -109,12 +106,12 @@ print(f'Max KG of methane per day: {max_methane_yield_per_kg} kg/day')
 
 min_methane_volume_per_cow_per_day = min_kg_of_waste_per_day*min_methane_yield_per_kg; # kg/day*L/kg = L/day
 min_methane_kg_per_cow_per_day = min_methane_volume_per_cow_per_day*methane_density_stp # L/day*kg/L = kg/day
-setElement("#minkgproduction", min_methane_kg_per_cow_per_day)
+setElement("#minkgproduction", int(min_methane_kg_per_cow_per_day))
 print(f'Min L/Day Methane per Cow: {min_methane_volume_per_cow_per_day}')
 
 max_methane_volume_per_cow_per_day = max_kg_of_waste_per_day*max_methane_yield_per_kg;
 max_methane_kg_per_cow_per_day = max_methane_volume_per_cow_per_day*methane_density_stp
-setElement("#maxkgproduction", max_methane_kg_per_cow_per_day)
+setElement("#maxkgproduction", int(max_methane_kg_per_cow_per_day))
 print(f'Max L/Day Methane per Cow: {max_methane_volume_per_cow_per_day}')
 
 setElement("#methanedensitystp", methane_density_stp*1000) # g/L
@@ -126,12 +123,12 @@ min_cow_energy_per_day = min_methane_kg_per_cow_per_day*joules_per_kg_of_methane
 max_cow_energy_per_day = max_methane_kg_per_cow_per_day*joules_per_kg_of_methane*methane_generator_efficiency # kg/day*J/kg = J/day
 min_cow_mj_per_month = min_cow_energy_per_day*30/1000000
 max_cow_mj_per_month = max_cow_energy_per_day*30/1000000
-setElement("#mincowmegajoulesperday",min_cow_energy_per_day/1000000)
-setElement("#maxcowmegajoulesperday",max_cow_energy_per_day/1000000)
+setElement("#mincowmegajoulesperday",int(min_cow_energy_per_day/1000000))
+setElement("#maxcowmegajoulesperday",int(max_cow_energy_per_day/1000000))
 min_cow_watts = (min_cow_energy_per_day)/number_of_seconds_in_a_day #J/day*day/sec = J/sec
 max_cow_watts = (max_cow_energy_per_day)/number_of_seconds_in_a_day
-setElement("#mincowjoulespersecond", min_cow_watts) 
-setElement("#maxcowjoulesjpersecond", max_cow_watts)
+setElement("#mincowjoulespersecond", int(min_cow_watts)) 
+setElement("#maxcowjoulesjpersecond", int(max_cow_watts))
 print(f'Min MJ of energy per day: {min_cow_energy_per_day/1000000} MJ/day')
 print(f'Max MJ of energy per day: {max_cow_energy_per_day/1000000} MJ/day')
 print(f'Min Cow Watts: {min_cow_watts} W/cow')
