@@ -76,7 +76,7 @@ async def getBTCPrice():
 
 
 # Constants and conversion factors
-parasitic_loss = 0.2 # parasitic loss assumption in RNG capture and electrical conversion
+parasitic_loss = 0.3 # parasitic loss assumption in RNG capture and electrical conversion
 downtime_loss = 0.2 # loss due to unexpected downtime and network outages
 methane_density_stp = 0.0007168 # kg/L at standard temperature and pressure
 joules_per_kg_of_methane = 50000000 # J/kg
