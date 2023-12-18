@@ -121,7 +121,7 @@
             of
             <strong class="pop" id="generatorefficiency"></strong>%</a>.
         Assuming <strong class="pop">86400</strong> seconds in a day, a cow produces approximately <strong
-            class="pop" id="mincowjoules"></strong> to <strong class="pop" id="maxcowjoules"></strong> Watts (J/s) of usable
+            class="pop" id="mincowjoulespersecond"></strong> to <strong class="pop" id="maxcowjoulesjpersecond"></strong> Watts (J/s) of usable
         electric power from RNG.
     </p>
     <p>
@@ -130,7 +130,7 @@
                 class="pop">1720</strong>
             kWh</a>
         of energy to confirm. Based on current network activity, there are typically
-        <a href="https://www.blockchain.com/charts/n-transactions-per-block"><strong class="pop">1800</strong>
+        <a href="https://www.blockchain.com/charts/n-transactions-per-block"><strong class="pop" id="txperblock"></strong>
             transactions per block</a>
         mined in the Bitcoin network. Therefore, a block requires, on average, <strong class="pop">3096</strong> MWh
         of energy to mine.
@@ -148,18 +148,18 @@
         saying the Bitcoin network pays ~$<strong class="pop" id="dollarsperwatt"></strong> per Watt-hour to secure the network.
     </p>
     <p>
-        If a cow produces ~<strong class="pop">80</strong> to <strong class="pop">124</strong> MJ of usable (i.e.
+        If a cow produces ~<strong class="pop" id="mincowmegajoulespermonth"></strong> to <strong class="pop" id="maxcowmegajoulespermonth"></strong> MJ of usable (i.e.
         accounting for generator efficiency) energy
         per day in the form of RNG, and said cow is paid fair market rate from the Bitcoin network for
-        its RNG-based electric output, the cow should earn about <strong class="pop">$25</strong> to<strong
-            class="pop">$55</strong> per month. If you assume
-        a <strong class="pop">20</strong> percent reduction in output due to various parasitic losses in RNG capture and
+        its RNG-based electric output, the cow should earn about $<strong class="pop" id="mincowmonthlyearnings"></strong> to $<strong
+            class="pop" id="maxcowmonthlyearnings"></strong> per month. If you assume
+        a <strong class="pop" id="parasiticloss"></strong> percent reduction in output due to various parasitic losses in RNG capture and
         conversion
-        to electricity as well an additional <strong class="pop">20</strong> percent reduction due to unplanned outages,
+        to electricity as well an additional <strong class="pop" id="downtimeloss"></strong> percent reduction due to unplanned outages,
         downtime
-        due to upgrades, etc., then the cow's conservative earning potential is in the ballpark of <strong
-            class="pop">$17</strong>
-        to <strong class="pop">$25</strong> per month. See <a
+        due to upgrades, etc., then the cow's conservative earning potential is in the ballpark of $<strong
+            class="pop" id="minconservativemonthlyearnings"></strong>
+        to $<strong class="pop" id="maxconservativemonthlyearnings"></strong> per month. See <a
             href="https://github.com/TtheBC01/cow.py/blob/main/cow.py">cow.py</a> for calculations.
     </p>
     <script type="py" src="./cow.py" config="./pyscript.json"></script>
