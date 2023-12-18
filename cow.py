@@ -88,8 +88,8 @@ max_lbs_of_waste_per_day = 133 # lbs/day
 min_kg_of_waste_per_day = min_lbs_of_waste_per_day*0.453592 # kg/day
 max_kg_of_waste_per_day = max_lbs_of_waste_per_day*0.453592 # kg/day
 
-setElement("#parasiticloss",parasitic_loss)
-setElement("#downtimeloss", downtime_loss)
+setElement("#parasiticloss",parasitic_loss*100)
+setElement("#downtimeloss", downtime_loss*100)
 
 setElement("#minkgwaste1", min_lbs_of_waste_per_day)
 setElement("#minkgwaste2", min_lbs_of_waste_per_day)
