@@ -22,9 +22,10 @@ async def getBTCPrice():
     else:
         print("Failed to fetch current btc tx per block")
 
-    energy_per_transaction = 1720 # kWh/tx
+    energy_per_transaction = 1780 # kWh/tx
+    setElement("#kwhpertx",energy_per_transaction)
     setElement("#txperblock",transactions_per_block)
-    mWh_per_block = energy_per_transaction*transactions_per_block/1000 # kWh/tx*mWh/kWw = mWh/tx
+    mWh_per_block = energy_per_transaction*transactions_per_block/1000 # kWh/tx*tx/block*mWh/kWw = mWh/block
     setElement("#mwhperblock", mWh_per_block)
     print(f'Bitcoin MW per block: {mWh_per_block} BTC/MWh')
 
@@ -44,14 +45,15 @@ async def getBTCPrice():
     btc_block_reward_request = await pyfetch(url="https://blockchain.info/q/bcperblock", method="GET")
     if btc_block_reward_request.status == 200:
         print("Successfully got BTC block reward")
-        transactions_per_block = await btc_block_reward_request.json()
+        block_reward = await btc_block_reward_request.json()
     else:
         print("Failed to fetch current btc block reward")
 
-    dollars_per_block = block_reward*btc_price # USD/block
-    dollars_per_Wh = dollars_per_block/(mWh_per_block*1000000)
-    setElement("#dollarsperblock", block_reward*btc_price)
-    setElement("#dollarsperwatt", dollars_per_block/(dollars_per_Wh*1000000))
+    dollars_per_block = block_reward*btc_price # btc/block*$/btc = $/block
+    dollars_per_Wh = dollars_per_block/(mWh_per_block*1000000) # $/block*block/mWh = $/mWh*Wh/mWh
+    setElement("#blockreward", block_reward)
+    setElement("#dollarsperblock", dollars_per_block) 
+    setElement("#dollarsperwatt", dollars_per_Wh)
     print(f'$ per Wh: {dollars_per_Wh} $/Wh')
     
     # What can a cow expect to earn from RNG based electricity production from Bitcoin mining
