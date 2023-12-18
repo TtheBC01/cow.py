@@ -21,7 +21,7 @@ async def getBTCPrice():
     setElement("#kwhpertx",energy_per_transaction)
     setElement("#txperblock",transactions_per_block)
     mWh_per_block = energy_per_transaction*transactions_per_block/1000 # kWh/tx*tx/block*mWh/kWw = mWh/block
-    setElement("#mwhperblock", mWh_per_block)
+    setElement("#mwhperblock", int(mWh_per_block))
     print(f'Bitcoin MW per block: {mWh_per_block} BTC/MWh')
 
     print("Fetching price from CoinGecko")
