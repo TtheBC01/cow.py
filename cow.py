@@ -126,8 +126,8 @@ min_cow_energy_per_day = min_methane_kg_per_cow_per_day*joules_per_kg_of_methane
 max_cow_energy_per_day = max_methane_kg_per_cow_per_day*joules_per_kg_of_methane*methane_generator_efficiency # kg/day*J/kg = J/day
 min_cow_mj_per_month = min_cow_energy_per_day*30/1000000
 max_cow_mj_per_month = max_cow_energy_per_day*30/1000000
-setElement("#mincowmegajoulesperday",min_cow_energy_per_day)
-setElement("#maxcowmegajoulesperday",max_cow_energy_per_day)
+setElement("#mincowmegajoulesperday",min_cow_energy_per_day/1000000)
+setElement("#maxcowmegajoulesperday",max_cow_energy_per_day/1000000)
 min_cow_watts = (min_cow_energy_per_day)/number_of_seconds_in_a_day #J/day*day/sec = J/sec
 max_cow_watts = (max_cow_energy_per_day)/number_of_seconds_in_a_day
 setElement("#mincowjoulespersecond", min_cow_watts) 
